@@ -1,0 +1,71 @@
+Level 0-1:
+----------
+Used ssh to connect to bandit. 
+Used ls command to list the files of the directory and cat to print the contents in the file to the terminal
+6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
+
+Level 1-2:
+----------
+Used cat ./(dashed filename) to open dashed file
+cat ./-
+PK8fYLZg2hnHSz83plBL1iEPKdD3QToB
+
+Level 2-3:
+----------
+Used cat ./--spaces\ in\ this\ filename-- to print the contents of a file which has spaces in its filename
+cat ./--spaces\ in\ this\ filename--
+7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME
+
+Level 3-4:
+----------
+Used ls -la to list hidden files then used cat to print the contents
+cat ./...Hiding-From-You
+xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq
+
+Level 4-5:
+----------
+Used file command to find the ASCII human readable file and cat to print it
+file . ./-file*
+cat ./-file07
+6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG
+
+Level 5-6:
+----------
+Used find command with parameters:
+-type f : to find human readable file
+-size 1033c : to find the file with size 1033 bytes
+! -executable : to find non executable file
+find . -type f -size 1033c ! -executable
+cat ./maybehere07/.file2
+pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+
+Level 6-7:
+----------
+Used find command with parameters -user -group and -size to find the specified file
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+cat /var/lib/dpkg/info/bandit7.password
+Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3
+
+Level 7-8:
+----------
+Used grep command to find the line with the word millionth in it
+grep "millionth" data.txt 
+millionth	VR1ljMayciFxbnUokuQmJFw6QC9VKtub
+
+Level 8-9:
+----------
+Sort command to first sort the data in the file and then pipe the output to uniq to find the line that occurs only once using the -u parameter
+sort data.txt | uniq -u 
+EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl
+
+Level 9-10:
+-----------
+Used strings command to find the string data in the file and piped the output to grep to find the lines the has multiple === in it
+strings data.txt | grep "==="
+B0s2khmbT9u0geKuOoVGW3JZKhndE3BG
+
+Level 10-11:
+------------
+Base64 command with parameter -d(decode) to decode the base64 encoded data
+base64 -d data.txt
+The password is pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
