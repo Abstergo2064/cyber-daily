@@ -69,3 +69,46 @@ Level 10-11:
 Base64 command with parameter -d(decode) to decode the base64 encoded data
 base64 -d data.txt
 The password is pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro
+
+Level 11-12:
+------------
+The data was encoded in rot13 format. It was decoded using tr command
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+(It means that Cap A-Z should be mapped with cap N-Z and A-M making it rotated in 13th place and a-z should be mapped as n-z and a-m
+GROozWPO8QyN0mGrjUkID0WCYkZiQxrN
+
+Level 12-13:
+------------
+First make a temporary folder in tmp using - mktemp -d
+copy the hexdump file.
+1. Revert the hexdump file to original binary -> xxd -r data.txt >data1
+2. Check the file type -> file data1
+if the file is gzip then rename the file with .gz or if the file is bzip2 file then rename it with .bz2
+then based on the file type decompress it 
+gzip -> gzip -d data1.gz
+bzip2 -> bzip2 -d data1.bz2
+then if you find the file type as tar then first rename the file with .tar then:
+tar -xf (filename) to extract the file.
+do the steps based on the file type until you get human readable ASCII file
+
+qQYQiHOBPR8zR61qxYqX45quvihF2uzk
+
+Level 13-14:
+------------
+First we got the private key from the bandit13. We used scp to download the private key from bandit13 to our own machine and used ssh to login to level 14 
+scp -P 2220 bandit13@bandit.labs.overthewire.org:sshkey.private .
+chmod 700 sshkey.private (So that it is only accessible to me)
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org
+cat /etc/bandit_pass/bandit14
+
+aaWecNkG4FhxJQxz07uiwzVP6bJiYS65
+
+Level 14-15:
+------------
+In this level we use netcat to connect and retrieve pass from the localhost(127.0.0.1) at port 30000
+nc localhost 30000
+pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7
+
+Level 15-16:
+------------
+
