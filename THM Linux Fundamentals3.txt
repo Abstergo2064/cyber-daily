@@ -1,0 +1,93 @@
+THM Linux Fundamentals 3
+-----------------------
+Theory:
+-------
+Processes are programs running in your device managed by the kernel. They have a process ID known as the PID. They are given in an incremental format.
+ps command can be used to see processes running in your session. Moreover {ps aux} command can be used to see all the processes running in your device. You can use the {kill} command to kill a process. There are 3 ways in which you can kill a process:
+SIGTERM -> Kill the process but lets it finish the clean up
+SIGKILL -> Kills the process abruptly
+SIGSTOP -> Stop or suspend the process
+
+Systemd is a system and service manager for managing the services and processes in the linux OS. It is the first process that starts when the system boots up.
+systemctl is a utility of systemd used to manage the services. It has several options like (start, stop, enable, disable and status)
+->systemctl start {service name} - To start a service
+->systemctl stop {service name} - To stop a service
+->systemctl enable {service name} - To make the service start at bootup
+->systemctl start {service name} - To disable it as bootup process
+
+* ctrl+Z can be used to pause a process
+* using & operator at the last of a command makes it run in the background
+* fg command can be used to bring the background process to foreground 
+
+Cron jobs and Crontab:
+-> Cron jobs are scheduled processes that we can specify when to run automatically.
+-> Crontab is responsible for facilitating and managing cron jobs.
+-> {crontab -e} command can be used to make a new cron job.
+-> {crontab -l} command lists all the cron jobs of specified by the user
+
+Task 3:
+-------
+->Create a file using Nano
+ans) nano {filename}
+
+->Edit "task3" located in "tryhackme"'s home directory using Nano. What is the flag?
+ans) THM{TEXT_EDITORS}
+
+Task 4:
+-------
+*wget is a command used to download resources from the web via HTTP/HTTPS
+eg: wget {web address of the file to be downloaded}
+*scp(Secure Copy) is used to copy files using the SSH protocol from remote desktop
+eg: scp {username}@{ip}:{file location} {name you wish it to be saved as}
+*using the command python3 -m http.server you can host your localhost webserver
+
+->Download the file http://10.49.143.134:8000/.flag.txt (opens in new tab) onto the TryHackMe AttackBox. Remember, you will need to do this in a new terminal.
+What are the contents?
+hint: wget 
+ans) THM{WGET_WEBSERVER}
+
+Task 5:
+-------
+->If we were to launch a process where the previous ID was "300", what would the ID of this new process be?
+ans) 301
+
+->If we wanted to cleanly kill a process, what signal would we send it?
+ans) SIGTERM
+
+->Locate the process that is running on the deployed instance (10.49.143.134). What flag is given?
+ans) THM{PROCESSES}
+
+->What command would we use to stop the service "myservice"?
+ans) systemctl stop myservice
+
+->What command would we use to start the same service on the boot-up of the system?
+ans) systemctl enable myservice
+
+->What command would we use to bring a previously backgrounded process back to the foreground?
+ans) fg
+
+Task 6:
+-------
+->When will the crontab on the deployed instance (10.49.143.134) run?
+ans) @reboot
+
+Task 7:
+-------
+Repositories in Linux acts as a warehouse that contains a collections of packages/applications. When you type apt install {name}, the package manager search for the apps in these repositories. So it is important to update or add repositories as per your need and to be careful that you do not add unverified repositories.
+/etc/apt/sources.list -> contains your repository address
+
+Repositories can be added using {add-apt-repository (address)}
+
+GPG(GNU Privacy Guard) keys are keys that are used to verify that the package you are installing it trustful and verified
+
+Task 8:
+-------
+->Look for the apache2 logs on the deployable Linux machine
+ans) cd /etc/var/apache2
+
+->What is the IP address of the user who visited the site?
+ans) 10.9.232.111
+
+->What file did they access?
+ans) catsanddogs.jpg
+
