@@ -1,0 +1,65 @@
+THM Linux Fundamentals - 1
+---------------------------
+First Release of Linux OS is in 1991. It is free and OpenSource.
+
+Important commands needed to complete this room:
+-> cd - change directory
+-> ls - list the contents in a directory
+-> pwd - print working directory 
+-> echo - echoes or prints whatever you type into the terminal
+-> whoami - To find the user you are logged in as
+-> cat - To print the contents of a file into the terminal
+-> grep - To search text in a file in a pattern or expression
+-> find - To find/locate a file
+
+Operators to know:
+1. & -> To run commands in the background
+2. > -> to Redirect output into a file. It replaces any data that is already in the file
+3. >> -> To redirect output into a file but this operator appends the data with the existing data
+4. && -> To combine two commands
+
+Task 4:
+-------
+-> If we wanted to output the text "TryHackMe", what would our command be?
+ans) echo TryHackMe
+
+-> What is the username of who you're logged in as on your deployed Linux machine?
+command -> whoami
+ans) tryhackme
+
+Task 5:
+-------
+-> On the Linux machine that you deploy, how many folders are there?
+command -> ls
+ans) 4
+
+->Which directory contains a file? 
+tip: ls each folder.
+ans) folder4
+
+->What is the contents of this file?
+command -> cd folder4
+	   cat note.txt
+ans) Hello World!
+
+->Use the cd command to navigate to this file and find out the new current working directory. What is the path?
+command -> pwd
+ans) /home/tryhackme/folder4
+
+Task 6:
+-------
+-> Use grep on "access.log" to find the flag that has a prefix of "THM". What is the flag? Note: The "access.log" file is located in the "/home/tryhackme/" directory.
+command: grep "THM" /home/tryhackme/accesss.log
+ans: THM{ACCESS}
+
+Task 7:
+-------
+->If we wanted to run a command in the background, what operator would we want to use?
+ans: &
+
+->If I wanted to replace the contents of a file named "passwords" with the word "password123", what would my command be?
+ans: echo password123 > passwords
+
+->Now if I wanted to add "tryhackme" to this file named "passwords" but also keep "passwords123", what would my command be
+ans: echo tryhackme >> passwords
+
