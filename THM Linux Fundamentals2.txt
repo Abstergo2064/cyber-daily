@@ -1,0 +1,111 @@
+THM Linux Fundamentals 2
+-------------------------
+Theory:
+-------
+SSH(Secure Shell) Protocol helps create a cryptographic connection between devices and help us remotely access and execute commands on remote desktops or devices.
+
+File Permissions: Different users have different permissions on the same file. There are three sets: Users, Groups and Others.
+->Users contains the permissions of the owner of the file.
+->Groups contains the permissions of a group.
+->Others contains permissions to those who not in both the users and groups
+
+There are three permissions: Read, Write and Execute
+Put command ls -l to see who owns the file and what permissions each has.
+r=read (4)
+w=write (2)
+x=execute (1)
+
+Commands to Know:
+-----------------
+touch -> To create an empty file
+file -> To check the file type
+man -> shows the manual page of commands or tools
+ssh -> To create ssh connection and connect to remote devices
+cat -> To print the contents of a file into the terminal
+su -> Switch User to another user that exists
+
+Important Directions in your linux filesystem:
+----------------------------------------------
+-> /etc: Contains all the important system files that your OS needs
+eg: /etc/passwd, /etc/shadow
+-> /var: Directory where all the variable data is being stored like logs, temp files and other data that are not user specific
+eg: /var/log, /var/opt, /var/tmp
+-> /root: This is basically the home directory of the root user.
+-> /tmp: Stores all the temporary data that is only needed to be accessed one or two times. Kind of works same like the RAM as the data in this directory is cleared when we restart the system.
+
+Task 2:
+-------
+To connect to tryhackme lab:
+ssh tryhackme@10.49.174.174 
+
+Task 3:
+-------
+->What directional arrow key would we use to navigate down the manual page?
+ans) down
+->What flag would we use to display the output in a "human-readable" way?
+hint: man ls
+ans) -h
+
+Task 4:
+-------
+->How would you create the file named "newnote"?
+ans) touch newnote
+
+->On the deployable machine, what is the file type of "unknown1" in "tryhackme's" home directory?
+hint: file unknown1
+ans) ASCII text
+
+->How would we move the file "myfile" to the directory "myfolder" 
+ans) mv myfile myfolder
+
+->What are the contents of this file?
+hint: cat myfile
+ans) THM{FILESYSTEM}
+
+Task 5:
+-------
+-> On the deployable machine, who is the owner of "important"?
+hint: ls -l
+ans) user2
+
+->What would the command be to switch to the user "user2"?
+ans) su user2
+
+->Output the contents of "important", what is the flag?
+ans) THM{SU_USER2}
+
+Task 6:
+-------
+->What is the directory path that would we expect logs to be stored in?
+ans) /var/log
+
+->What root directory is similar to how RAM on a computer works?
+ans) /tmp
+
+->Name the home directory of the root user 
+ans) /root
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
