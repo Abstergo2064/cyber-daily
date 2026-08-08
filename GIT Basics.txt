@@ -1,0 +1,68 @@
+GIT Basics
+----------
+
+->What is Git?
+Git is an Open Source Distributed Version Control system that helps developers and users interact and manage changes made to the code and work on projects of any size. It also keeps a history of every change that is made to the code so that we can easily revert or review the previous versions easily.
+
+Types of Version control systems:
+1. Centralized : In this all the files and their history is saved in a central server
+2. Local : All the files and history are stored in the users device itself and managed by the user only.
+3. Distributed : Everyone has a local repository containing the project. After making changes and reviewing they can push to the main repository.
+
+Repository : It is a storage space where the project files and history is kept. Two types are there:
+1. Local repo : A folder/directory in the users local device that contains the files of the project. 
+2. Remote repo : The version of the project that is stored in a remote server like github, gitlab etc.
+
+Commits : It acts as a snapshot of the project at a specific point of time. It has a unique hash identifier and includes a message that specifies what changes are made. It allows you to track history
+
+Branches : It allows developers to work on different bugs or features at the same time without affecting the main code or project file. Two types of branches:
+1. Main/Master branch: This is the stable working version of the project.
+2. Feature branch: Branch made to develop new features or fix bugs without affecting the main branch
+
+Merging : Merging is the process where the updated files or codes are merged with the main branch and resolve any conflicts that comes up.
+
+Cloning : The process of cloning the remote repository to make a copy of it in the local repository. 
+
+Push : To push the updated file into the remote repo
+
+Pull : To pull any file or code into the local repo
+
+Git Workflow:
+-------------
+Three states:
+1. Working Directory : This directory contains all the files/codes related to your project. Changes you make here are not automatically tracked by git
+2. Staging Area : This is a middle area in which you add changes that you want to be tracked and include in your history using {git add (filename)} command.
+3. Repository(.git directory) : This is where all the commits are stored. When we execute {git commit -m (msg)} command, it creates a snapshot of the changes in the repository also creating a history.
+
+Basic Commands:
+---------------
+-> git status : to show the status of the repository. Shows the files which are staged, unstaged and untracked.
+-> git init : To initialise the git repository.
+-> git add <file> : To add the file into the staging area from the working directory.
+-> git commit -m <"msg"> : To create a snapshot and save it in the repository.
+-> git branch <branch name> : to create a branch.
+-> git checkout <branch name> : Switches to the specified branch to work on it.
+-> git merge <branch name> : To merge changes from the given branch to the current branch.
+-> git log : Displays the history of commits of the current branch.
+-> git push origin <branch name> : To push the changes to the remote repo
+-> git pull origin <branch name> : To pull the files/codes from remote repo to the local branch
+-> git clone <url> : To create a clone of the remote repo to the local machine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
