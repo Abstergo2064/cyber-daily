@@ -57,7 +57,17 @@ Earlier there was no clear standardisation. Different manufacturers followed the
 
 *TCP/IP Suite contains many protocols but two prominent protocols are TCP and IP.
 
+->DNS Resolution Order
+-----------------------
+1. HOSTS FILE (/etc/hosts) - checked FIRST
+2. Local DNS cache
+3. Recursive DNS server (e.g., 8.8.8.8)
+4. Root DNS server
+5. TLD DNS server (.com, .org)
+6. Authoritative DNS server
+
 ->Tasks:
+--------
 
 Task 2:
 -------
