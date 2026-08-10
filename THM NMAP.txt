@@ -1,0 +1,59 @@
+THM NMAP
+--------
+Before attacking anything we first need to know what we are attacking. In hacking, before we hack anything we need to know what we are hacking, what all things are there to hack and resources are there in the network. For that we use Nmap.
+
+What is Nmap?
+Nmap is Network Mapping Tool used to scan the network to gain information on the network like number of devices in the network, services and their versions, OS information etc. We use this tool to gain a overall image or sketch of the network.
+
+* Total number of ports in a system -> 65535
+* Well known or standard ports -> 1024
+
+Common scan types:
+------------------
+-> Syn scan : -sS
+   * Known as half-open/stealth scan.
+   * Sends SYN packet and if it receive SYN/ACK then port is open. RST(reset) packet is send back instead of ACK.
+   * If SYN/ACK is dropped or spoofed with a TCP reset then it is marked as filtered.
+   * If RST is send back instead of SYN/ACK then the port is marked closed.
+   
+-> UDP scan : -sU 
+   * Sends UDP packets and if there is no response then the port is marked open|filtered. If there is a response then open.
+   * If it gets ICMP packet containing message that the port is unreachable then it is marked closed.
+
+-> Null Scan : -sN
+   * Sends TCP request with NULL flag. If RST packet is send back then port is closed. Otherwise open.
+
+-> FIN Scan : -sF
+   * Sends TCP packet with FIN flag which is used to close active connections. If RST is received then port is closed.
+
+-> Xmas Scan : -sX
+   * Sends a malformed TCP packet with PSH,URG and FIN flag. If RST is received the port is closed
+   
+* NULL,FIN and XMAS scans are mostly used for firewall evasion.
+
+-> Ping Sweep : -sn
+   * Used to identify live hosts in the network. Sends ICMP packets to all possible IP's in the network
+   
+-> OS detection : -O
+-> Version Detection : -sV
+
+* Timing -T : used to adjust the speed of scan runs
+  -T1 is slowest and stealthier while T5 is faster and aggressive
+
+NSE(Nmap Script Engine): -sC
+-----------------------
+Nmap has a script engine which contains scripts for various purposes like detection, evasion and exploitation etc.
+Stored in - /usr/share/nmap/scripts/
+Scripts are written in Lua Programming Language
+Different categories of scripts available are:
+-> Safe : Won't affect the target
+-> intrusive : Not safe: likely to affect the target
+-> vuln : Scan for vulnerabilities
+-> exploit : Attempt to exploit a vulnerability
+-> auth : Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+-> brute : Attempt to bruteforce credentials for running services
+-> discovery : Attempt to query running services for further information about the network (e.g. query an SNMP server).
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
