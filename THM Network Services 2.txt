@@ -1,0 +1,45 @@
+THM Network Services 2
+-----------------------
+->NFS (Network File System)
+----------------------------
+    * Service used to share files and directories with others over a network.
+    * Users and programs can access these files as if they are in their local systems.
+    * Port - 2049
+    -> Working:
+       * Mounts full or portion of the file system on a server.
+       * These portion can be accessed by clients with privileges assigned to the each file
+       * Client requests a mount then the NFS mount daemons acts on that mount using RPC.
+    * NSF Commons : These are programs used to interact with the NFS shares. lockd, statd, showmount, nfsstat, gssd, idmapd and mount.nfs
+    * /usr/sbin/showmount -e [IP] -> command used to list NFS shares 
+    * sudo mount -t nfs {IP}:{share name} {location to mount} -nolock
+      -t = type of device to mount
+      -nolock = to not use NLM locking
+    
+->SMTP (Simple Mail Transfer Protocol)
+--------------------------------------
+    * Protocol used to handle the sending of Emails.
+    * SMTP paired with POP/IMAP allows users to send and retrieve received emails.
+    * POP (Post Office Protocol), IMAP (Internet Message Access Protocol)
+    * Port : 25
+    ->Working:
+         * SMTP handshake initiates a connection between the user and the their email client's smtp server. eg; smtp.google.com. 
+         * sender then submits the details and attachments etc, to the server.
+         * SMTP server checks whether the domain name of the recipient and sender is same.
+         * Then the SMTP server sends the email after verifying. If the receivers server cant be accessed or not available the email gets put into SMTP queue.
+         * Then the recipients server will verify the senders details and forwards the email to POP/IMAP server.
+         * Then the email shows up in receivers inbox.
+     * Metasploit - smtp_version module to scan and get info on the smtp
+                  - smtp_enum to enumerate the smtp.
+
+
+-> MySQL
+--------
+   * It is a relational Database Management System
+   * SQL is used to interact.
+   * client-server model
+   * Mostly used as back-end databases
+   -> Enumerating MySQL:
+   	* Use mysql_sql module in metasploit to run mysql commands and find info
+   	* mysql_schemadump module to dump all the Databases and their tables
+   	-> schema is another name for database.
+   	* mysql_hashdump module to dump all the password hashes available
