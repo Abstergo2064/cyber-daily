@@ -1,0 +1,15 @@
+Networking Fundamentals
+-----------------------
+# Network: A collection of interconnected computers or devices.
+# Internet: A collection of interconnected networks.
+# Hosts: Devices that sends or receives data over a network.
+# Client: Device that requests any data over a network. Client always initiates a request.
+# Server: Device that contains a software installed that responds to specific client requests. Server always sends responses. It never initiates a request. 
+# IP address: They are the identity of each host in a network. 
+	      -> IPv4 is 32bits divided into 4 octects [0-255] eg. 192.168.1.1
+# Subnets: Sub-Networks inside a Network. eg. In company different dept like IT, Marketing and Legal have their own network which is the subnetwork of the main company network.
+
+Network Devices:
+----------------
+# Repeater: 
+
